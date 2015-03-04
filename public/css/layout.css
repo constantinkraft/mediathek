@@ -1,15 +1,59 @@
-#header {
-
+.header {
+/*
+    height: 50px;
+*/
+    margin: auto;
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
 }
 
-#menu {
+.header h1 {
+    margin: 10px;
+    font-family: Times, serif;
+    font-weight: normal;
+    font-style: italic;
+}
+
+ul#navigation {
+    list-style: none;
+}
+
+nav li {
+/*
+    width: 2em;
+*/
+    float: left;
+    display: block;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #eee;
+    padding: 10px 1em;
+    text-align: center;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #8b0000;
+/*
+    font-variant: small-caps;
+*/
+    font-weight: bold;
+/*
+    padding: 
+*/
+
 
 }
 
 #content {
-
+    clear: both;
+    border-top: 1px solid #aaa;
+    padding: 20px 1em;
+    border-bottom: 1px solid #ccc;
 }
 
-#footer {
-
+.footer {
+    border-top: 2px solid #eee;
+    padding: 20px 1em;
+    font-size: .7em;
+    text-align: center;
 }
