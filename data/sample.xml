@@ -8,9 +8,67 @@
     
     <image>
         <title>Test-Titel</title>
-        <description>
-            Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.
-        </description>
+        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
+        <date-created>20150101</date-created>
+        <time-created>172917+0100</time-created>
+        <digital-creation-date>20150101
+        </digital-creation-date>
+        <digital-creation-time></digital-creation-time>
+        <keyword>stichwort 1</keyword>
+        <keyword>stichwort 2</keyword>
+        <keyword>stichwort 3</keyword>
+        <filetype>jpg</filetype>
+        <file_path>images/test1.jpg</file_path>
+        <author>Jens Mander</author>
+    </image>
+    <image>
+        <title>Test-Titel</title>
+        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
+        <date-created>20150101</date-created>
+        <time-created>172917+0100</time-created>
+        <digital-creation-date>20150101
+        </digital-creation-date>
+        <digital-creation-time></digital-creation-time>
+        <keyword>stichwort 1</keyword>
+        <keyword>stichwort 2</keyword>
+        <keyword>stichwort 3</keyword>
+        <filetype>jpg</filetype>
+        <file_path>images/test1.jpg</file_path>
+        <author>Jens Mander</author>
+    </image>
+    <image>
+        <title>Test-Titel</title>
+        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
+        <date-created>20150101</date-created>
+        <time-created>172917+0100</time-created>
+        <digital-creation-date>20150101
+        </digital-creation-date>
+        <digital-creation-time></digital-creation-time>
+        <keyword>stichwort 1</keyword>
+        <keyword>stichwort 2</keyword>
+        <keyword>stichwort 3</keyword>
+        <filetype>jpg</filetype>
+        <file_path>images/test1.jpg</file_path>
+        <author>Jens Mander</author>
+    </image>
+    <image>
+        <title>Test-Titel</title>
+        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
+        <date-created>20150101</date-created>
+        <time-created>172917+0100</time-created>
+        <digital-creation-date>20150101
+        </digital-creation-date>
+        <digital-creation-time></digital-creation-time>
+        <keyword>stichwort 1</keyword>
+        <keyword>stichwort 2</keyword>
+        <keyword>stichwort 3</keyword>
+        <filetype>jpg</filetype>
+        <file_path>images/test1.jpg</file_path>
+        <author>Jens Mander</author>
+    </image>
+    <image>
+        <title>Test-Titel</title>
+        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
         <date-created>20150101</date-created>
         <time-created>172917+0100</time-created>
         <digital-creation-date>20150101
