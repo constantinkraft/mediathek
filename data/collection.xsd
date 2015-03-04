@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="collection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="description"/>
+        <xs:element ref="image"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="image">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="description"/>
+        <xs:element ref="date-created"/>
+        <xs:element ref="time-created"/>
+        <xs:element ref="digital-creation-date"/>
+        <xs:element ref="digital-creation-time"/>
+        <xs:element maxOccurs="unbounded" ref="keyword"/>
+        <xs:element ref="filetype"/>
+        <xs:element ref="file_path"/>
+        <xs:element ref="author"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="date-created" type="xs:integer"/>
+  <xs:element name="time-created" type="xs:string"/>
+  <xs:element name="digital-creation-date" type="xs:integer"/>
+  <xs:element name="digital-creation-time">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="keyword" type="xs:string"/>
+  <xs:element name="filetype" type="xs:NCName"/>
+  <xs:element name="file_path" type="xs:string"/>
+  <xs:element name="author" type="xs:string"/>
+  <xs:element name="title" type="xs:NCName"/>
+  <xs:element name="description" type="xs:string"/>
+</xs:schema>
