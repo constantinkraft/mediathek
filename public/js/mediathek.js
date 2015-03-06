@@ -4,18 +4,28 @@ $(document).ready(function() {
     // https://learn.jquery.com/code-organization/concepts#the-module-pattern
     var gallery = (function() {
 
-        // URL of XML data containing collection
-        var data_url = "/mediathek/data/sample.xml";
-        var container = $("div#container");
-        var items;
+        var config = {
+            data_url: "/mediathek/data/sample.xml",
+            container: $( '<div class="container"></div>' ),
+        }
         
-        var init = function(config) {
+        var init = function( settings ) {
             // do init stuff
+            
+            // Einstellungen können überschrieben werden
+            $.extend( config, settings );
+            // DEBUG
+            console.log(config);
         };
+
+        var setup = function() {
+            // setup html container
+            // getRecordsFromServer(callback)
+        }
 
         var getRecordsFromServer = function(callback) {
             console.log("bar!");
-            $.get(data_url, callback);
+            $.get(config.data_url, callback);
         };
 
         var showGallery = function() {
@@ -45,6 +55,7 @@ $(document).ready(function() {
         
         // return publicly accessible methods
         return {
+            init: init,
             showGallery: showGallery
         };
         
