@@ -15,10 +15,14 @@ $(document).ready(function() {
             // Einstellungen können überschrieben werden
             $.extend( config, settings );
             // DEBUG
-            console.log(config);
+            //~ console.log(config);
         };
 
         var setup = function() {
+            // Container versteckt halten
+            container.hide();
+            
+            getRecordsFromServer(processXML);
             // setup html container
             // getRecordsFromServer(callback)
         }
@@ -32,12 +36,11 @@ $(document).ready(function() {
             console.log("foo!");
             // TODO: nach init() verschieben, callback sollte images nach HTML
             // übertragen
-            getRecordsFromServer(showMediaFiles);
+            
         };
 
-        var showMediaFiles = function(data) {
-            // TODO: Anforderung == Dateien *anzeigen*
-            // weitere Anforderung: Holen, in HTML übertragen
+        var processXML = function(data) {
+            // XML in HTML übertragen
             $xml = $( $.parseXML(data) );
 
             //~ $root = $xml.find("collection");
@@ -52,6 +55,8 @@ $(document).ready(function() {
             });
         };
 
+        init( {} );
+        setup();
         
         // return publicly accessible methods
         return {
