@@ -20,7 +20,7 @@ $(document).ready(function() {
 
         var setup = function() {
             // Container versteckt halten
-            container.hide();
+            config.container.hide();
             
             getRecordsFromServer(processXML);
             // setup html container

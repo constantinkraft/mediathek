@@ -1,0 +1,14 @@
+li.media-object {
+    width: 120px; height: 120px;
+    list-style: none;
+    float: left;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+li.media-object img {
+    width: 120px; height: 120px;
+    overflow: hidden;
+}
