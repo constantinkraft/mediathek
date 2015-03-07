@@ -1,14 +1,45 @@
 li.media-object {
-    width: 120px; height: 120px;
+    padding: 10px;
     list-style: none;
     float: left;
     margin: 20px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    opacity: 0.8;
 }
 
+li.media-object img + a.more-link {
+    width: 50px;
+    padding: 2px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+/*
+    font-variant: small-caps;
+*/
+    display: block;
+    margin: auto;
+}
+
+a.more-link:hover {
+    background-color: lightsalmon;
+    border-color: #8b0000;
+}
+
+a.more-link:focus {
+    outline: 0;
+}
+
+li.media-object:hover, li.media-object:focus {
+    opacity: 1;
+}
 
 li.media-object img {
     width: 120px; height: 120px;
     overflow: hidden;
+    border-radius: 3px;
+    margin: 0 0 5px 0;
 }
