@@ -1,5 +1,5 @@
 li.media-object {
-    padding: 10px;
+    padding: 8px 10px;
     list-style: none;
     float: left;
     margin: 20px;
@@ -42,4 +42,21 @@ li.media-object img {
     overflow: hidden;
     border-radius: 3px;
     margin: 0 0 5px 0;
+}
+
+div.info-container {
+/*
+    visibility: hidden;
+*/
+}
+
+table.info-table {
+    border-collapse: collapse;
+    border: 1px dotted #000;
+}
+
+table.info-table td {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px dotted #000;
 }
