@@ -7,78 +7,40 @@
     </description>
     
     <image>
+        <filetype>image/jpeg</filetype>
+        <filename>IMAG0006.JPG</filename>
+        <filesize>449712</filesize>
+        <filedate>2010:03:28 10:51:27</filedate>
         <title>Test-Titel</title>
-        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
-        <date-created>20150101</date-created>
-        <time-created>172917+0100</time-created>
-        <digital-creation-date>20150101
-        </digital-creation-date>
-        <digital-creation-time></digital-creation-time>
-        <keyword>stichwort 1</keyword>
-        <keyword>stichwort 2</keyword>
-        <keyword>stichwort 3</keyword>
-        <filetype>jpg</filetype>
-        <file_path>images/test1.jpg</file_path>
-        <author>Jens Mander</author>
+        <description>Ein Rotkehlchen im Garten meiner Eltern.</description>
+        <datetime>2005:08:04 14:54:37</datetime>
+        <camera-make>LUMICRON</camera-make>
+        <camera-model>LDC-4013</camera-model>
+        <resolution>960 x 1280</resolution>
+        <iso-speed>100</iso-speed>
+        <exposure-time>1/27s</exposure-time>
+        <flash-used>no</flash-used>
+        <keywords>
+            <keyword>Rotkehlchen (Erithacus rubecula)</keyword>
+            <keyword>Natur</keyword>
+            <keyword>Vogel</keyword>
+        </keywords>
+        <city>Köln</city>
+        <country>Deutschland</country>
+        <author>Constantin Kraft</author>
     </image>
-    <image>
-        <title>Test-Titel</title>
-        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
-        <date-created>20150101</date-created>
-        <time-created>172917+0100</time-created>
-        <digital-creation-date>20150101
-        </digital-creation-date>
-        <digital-creation-time></digital-creation-time>
-        <keyword>stichwort 1</keyword>
-        <keyword>stichwort 2</keyword>
-        <keyword>stichwort 3</keyword>
-        <filetype>jpg</filetype>
-        <file_path>images/test1.jpg</file_path>
-        <author>Jens Mander</author>
-    </image>
-    <image>
-        <title>Test-Titel</title>
-        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
-        <date-created>20150101</date-created>
-        <time-created>172917+0100</time-created>
-        <digital-creation-date>20150101
-        </digital-creation-date>
-        <digital-creation-time></digital-creation-time>
-        <keyword>stichwort 1</keyword>
-        <keyword>stichwort 2</keyword>
-        <keyword>stichwort 3</keyword>
-        <filetype>jpg</filetype>
-        <file_path>images/test1.jpg</file_path>
-        <author>Jens Mander</author>
-    </image>
-    <image>
-        <title>Test-Titel</title>
-        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
-        <date-created>20150101</date-created>
-        <time-created>172917+0100</time-created>
-        <digital-creation-date>20150101
-        </digital-creation-date>
-        <digital-creation-time></digital-creation-time>
-        <keyword>stichwort 1</keyword>
-        <keyword>stichwort 2</keyword>
-        <keyword>stichwort 3</keyword>
-        <filetype>jpg</filetype>
-        <file_path>images/test1.jpg</file_path>
-        <author>Jens Mander</author>
-    </image>
-    <image>
-        <title>Test-Titel</title>
-        <description>Dies ist eine tolle Beipsiel-Beschreibung für das erste Test-Bild.</description>
-        <date-created>20150101</date-created>
-        <time-created>172917+0100</time-created>
-        <digital-creation-date>20150101
-        </digital-creation-date>
-        <digital-creation-time></digital-creation-time>
-        <keyword>stichwort 1</keyword>
-        <keyword>stichwort 2</keyword>
-        <keyword>stichwort 3</keyword>
-        <filetype>jpg</filetype>
-        <file_path>images/test1.jpg</file_path>
-        <author>Jens Mander</author>
-    </image>
+    
+    <document>
+        <filetype>application/pdf</filetype>
+        <filename>test.pdf</filename>
+        <filesize>3.7MB</filesize>
+        <lastmodified>2015:01:09 15:19:44+01:00</lastmodified>
+        <title>Test-Dokument</title>
+        <keywords>
+            <keyword>Test-Dokument</keyword>
+            <keyword>dummy</keyword>
+            <keyword>Portable Document Format</keyword>
+        </keywords>
+        <author>Constantin Kraft</author>
+    </document>
 </collection>

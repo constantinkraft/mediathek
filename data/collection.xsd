@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
   <xs:element name="collection">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="title"/>
         <xs:element ref="description"/>
-        <xs:element ref="image"/>
+        <xs:element ref="image" maxOccurs="unbounded"/>
       </xs:sequence>
+      <xs:attribute ref="xsi:noNamespaceSchemaLocation" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="image">
@@ -20,7 +23,7 @@
         <xs:element ref="digital-creation-time"/>
         <xs:element maxOccurs="unbounded" ref="keyword"/>
         <xs:element ref="filetype"/>
-        <xs:element ref="file_path"/>
+        <xs:element ref="filename"/>
         <xs:element ref="author"/>
       </xs:sequence>
     </xs:complexType>
@@ -33,7 +36,7 @@
   </xs:element>
   <xs:element name="keyword" type="xs:string"/>
   <xs:element name="filetype" type="xs:NCName"/>
-  <xs:element name="file_path" type="xs:string"/>
+  <xs:element name="filename" type="xs:string"/>
   <xs:element name="author" type="xs:string"/>
   <xs:element name="title" type="xs:NCName"/>
   <xs:element name="description" type="xs:string"/>
