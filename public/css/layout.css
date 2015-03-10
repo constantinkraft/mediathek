@@ -45,7 +45,7 @@ nav li a {
 }
 
 #content {
-    clear: both;
+    clear: both; min-height: 200px;
     border-top: 1px solid #aaa;
     padding: 20px 1em;
     border-bottom: 1px solid #ccc;

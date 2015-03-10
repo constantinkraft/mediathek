@@ -45,18 +45,26 @@ li.media-object img {
 }
 
 div.info-container {
-/*
-    visibility: hidden;
-*/
+    /*visibility: hidden;*/
+    position: absolute;
+    top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px #bbb;
+    background-color: #fff;
 }
 
 table.info-table {
     border-collapse: collapse;
-    border: 1px dotted #000;
+}
+
+table.info-table th {
+    padding: 10px;
 }
 
 table.info-table td {
     padding: 5px;
     font-size: 12px;
-    border: 1px dotted #000;
+    border: 1px dotted #bbb;
 }

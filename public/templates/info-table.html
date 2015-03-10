@@ -1,76 +1,87 @@
-<div class="info-container">
-  <table class="info-table">
-    <tr>
-      <td>File type</td>
-      <td>{{filetype}}</td>
-    </tr>
-    <tr>
-      <td>File name</td>
-      <td>{{filename}}</td>
-    </tr>
-    <tr>
-      <td>File size</td>
-      <td>{{filesize}}</td>
-    </tr>
-    <tr>
-      <td>File date</td>
-      <td>{{filedate}}</td>
-    </tr>
-    <tr>
-      <td>Titel</td>
-      <td>{{title}}</td>
-    </tr>
-    <tr>
-      <td>Beschreibung</td>
-      <td>{{description}}</td>
-    </tr>
-    <tr>
-      <td>Aufnahmedatum</td>
-      <td>{{datetime}}</td>
-    </tr>
-    <tr>
-      <td>Kamera-Marke</td>
-      <td>{{camera-make}}</td>
-    </tr>
-    <tr>
-      <td>Kamera-Modell</td>
-      <td>{{camera-model}}</td>
-    </tr>
-    <tr>
-      <td>Auflösung</td>
-      <td>{{resolution}}</td>
-    </tr>
-    <tr>
-      <td>ISO Geschwindigkeit</td>
-      <td>{{iso-speed}}</td>
-    </tr>
-    <tr>
-      <td>Verschlusszeit</td>
-      <td>{{exposure-time}}</td>
-    </tr>
-    <tr>
-      <td>Blitz ja/nein</td>
-      <td>{{flash-used}}</td>
-    </tr>
-    <tr>
-      <td>Stichwörter</td>
-      <td>
-          {{#keywords}}
-              "{{.}}"
-          {{/keywords}}
-      </td>
-    </tr>
-    <tr>
-      <td>Stadt</td>
-      <td>{{city}}</td>
-    </tr>
-    <tr>
-      <td>Land</td>
-      <td>{{country}}</td>
-    </tr>
-    <tr>
-      <td>Autor</td>
-      <td>{{author}}</td>
-    </tr>
-  </table>
-</div>    
+<script type="text/html" id="info-table">
+  <div class="info-container">
+    <table class="info-table">
+      <!--
+        TODO: Template entschlacken
+        hier könnten die einzelnen Tabellenzeilen auch als Mustache-Liste
+        formuliert werden und ein Callback aufgerufen werden, der evtl Ausnahmen
+        behandelt
+      -->
+      <tr>
+        <th colspan="2">Metadata for {{filename}}</th>
+      </tr>
+      <tr>
+        <td>File type</td>
+        <td>{{filetype}}</td>
+      </tr>
+      <tr>
+        <td>File name</td>
+        <td>{{filename}}</td>
+      </tr>
+      <tr>
+        <td>File size</td>
+        <td>{{filesize}}</td>
+      </tr>
+      <tr>
+        <td>File date</td>
+        <td>{{filedate}}</td>
+      </tr>
+      <tr>
+        <td>Titel</td>
+        <td>{{title}}</td>
+      </tr>
+      <tr>
+        <td>Beschreibung</td>
+        <td>{{description}}</td>
+      </tr>
+      <tr>
+        <td>Aufnahmedatum</td>
+        <td>{{datetime}}</td>
+      </tr>
+      <tr>
+        <td>Kamera-Marke</td>
+        <td>{{camera-make}}</td>
+      </tr>
+      <tr>
+        <td>Kamera-Modell</td>
+        <td>{{camera-model}}</td>
+      </tr>
+      <tr>
+        <td>Auflösung</td>
+        <td>{{resolution}}</td>
+      </tr>
+      <tr>
+        <td>ISO Geschwindigkeit</td>
+        <td>{{iso-speed}}</td>
+      </tr>
+      <tr>
+        <td>Verschlusszeit</td>
+        <td>{{exposure-time}}</td>
+      </tr>
+      <tr>
+        <td>Blitz ja/nein</td>
+        <td>{{flash-used}}</td>
+      </tr>
+      <tr>
+        <td>Stichwörter</td>
+        <td>
+            {{#keywords}}
+                "{{.}},"
+            {{/keywords}}
+        </td>
+      </tr>
+      <tr>
+        <td>Stadt</td>
+        <td>{{city}}</td>
+      </tr>
+      <tr>
+        <td>Land</td>
+        <td>{{country}}</td>
+      </tr>
+      <tr>
+        <td>Autor</td>
+        <td>{{author}}</td>
+      </tr>
+    </table>
+  </div>    
+</script>
