@@ -47,7 +47,9 @@ li.media-object img {
 div.info-container {
     /*visibility: hidden;*/
     position: absolute;
-    top: 30px;
+    top: 30px; left: 50%;
+    width: 400px;
+    margin-left: -220px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -67,4 +69,11 @@ table.info-table td {
     padding: 5px;
     font-size: 12px;
     border: 1px dotted #bbb;
+}
+
+p.small-note {
+    text-align: center;
+    font-size: 0.8em;
+    opacity: .8;
+    font-style: italic;
 }
