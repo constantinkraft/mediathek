@@ -5,7 +5,6 @@ li.media-object {
     margin: 20px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    opacity: 0.8;
 }
 
 li.media-object img + a.more-link {
@@ -35,6 +34,7 @@ a.more-link:focus {
 
 li.media-object:hover, li.media-object:focus {
     opacity: 1;
+    background: beige;
 }
 
 li.media-object img {
