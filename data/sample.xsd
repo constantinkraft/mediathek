@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/-->
+  <xs:element name="collection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="description"/>
+        <xs:element maxOccurs="unbounded" ref="media-object"/>
+      </xs:sequence>
+      <!--xs:attribute ref="xsi:noNamespaceSchemaLocation" use="required"/-->
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="media-object">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="filetype"/>
+        <xs:element ref="filename"/>
+        <xs:element ref="filesize"/>
+        <xs:choice>
+          <xs:element ref="filedate"/>
+          <xs:element ref="lastmodified"/>
+        </xs:choice>
+        <xs:element ref="title"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="description"/>
+          <xs:element ref="datetime"/>
+          <xs:element ref="camera-make"/>
+          <xs:element ref="camera-model"/>
+          <xs:element ref="resolution"/>
+          <xs:element ref="iso-speed"/>
+          <xs:element ref="exposure-time"/>
+          <xs:element ref="flash-used"/>
+        </xs:sequence>
+        <xs:element ref="keywords"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="city"/>
+          <xs:element ref="country"/>
+        </xs:sequence>
+        <xs:element ref="author"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="filetype" type="xs:string"/>
+  <xs:element name="filename" type="xs:NCName"/>
+  <xs:element name="filesize" type="xs:NMTOKEN"/>
+  <xs:element name="filedate" type="xs:string"/>
+  <xs:element name="lastmodified" type="xs:string"/>
+  <xs:element name="datetime" type="xs:string"/>
+  <xs:element name="camera-make" type="xs:NCName"/>
+  <xs:element name="camera-model" type="xs:NCName"/>
+  <xs:element name="resolution" type="xs:string"/>
+  <xs:element name="iso-speed" type="xs:integer"/>
+  <xs:element name="exposure-time" type="xs:string"/>
+  <xs:element name="flash-used" type="xs:NCName"/>
+  <xs:element name="keywords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="keyword"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="keyword" type="xs:string"/>
+  <xs:element name="city" type="xs:NCName"/>
+  <xs:element name="country" type="xs:NCName"/>
+  <xs:element name="author" type="xs:string"/>
+  <xs:element name="title" type="xs:NCName"/>
+  <xs:element name="description" type="xs:string"/>
+</xs:schema>

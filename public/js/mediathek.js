@@ -57,7 +57,7 @@ $(document).ready(function() {
       //~ $root = $xml.find("collection");
       // Elemente holen
       // TODO: selector feintunen: nur media-objects
-      $elements = $xml.find('image, document');
+      $elements = $xml.find('media-object');
 
       // iterate XML elements
       $.each($elements, function( idx, el ) {

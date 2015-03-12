@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="collection.xsd">
+    xsi:noNamespaceSchemaLocation="sample.xsd">
     <title>Test</title>
     <description>
         Lorem Ipsum dolo sit amet. Test Gedöns Beschreibung...
     </description>
-    
-    <image>
+
+    <media-object>
         <filetype>image/jpeg</filetype>
         <filename>IMAG0006.JPG</filename>
         <filesize>449712</filesize>
@@ -28,9 +28,9 @@
         <city>Köln</city>
         <country>Deutschland</country>
         <author>Constantin Kraft</author>
-    </image>
-    
-    <document>
+    </media-object>
+
+    <media-object>
         <filetype>application/pdf</filetype>
         <filename>test.pdf</filename>
         <filesize>3.7MB</filesize>
@@ -42,5 +42,5 @@
             <keyword>Portable Document Format</keyword>
         </keywords>
         <author>Constantin Kraft</author>
-    </document>
+    </media-object>
 </collection>
