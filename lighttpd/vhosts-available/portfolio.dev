@@ -1,0 +1,5 @@
+# Graffecke.dev
+$HTTP["host"] =~ "^(www\.)?portfolio.dev" {
+	server.document-root = "/srv/http/portfolio"
+}
+

@@ -1,0 +1,27 @@
+# Typo3 4.5.x
+$HTTP["host"] =~ "^(www\.)?typo345.dev" {
+	server.document-root = "/srv/http/typo3/introductionpackage-4.5.34"
+#	url.rewrite-if-not-file =(
+#            "^([^\?]*)(\?(.+))?$" => "/index.php?url=$1&$3"
+#        )	
+#	url.rewrite =(
+#	    "(index.php|test.php|favicon.ico)" => "/$1",
+#            "(css|files|img|js)/(.*)" => "/$1/$2",
+#	)
+   url.rewrite-if-not-file = (
+       "(index.php|test.php|favicon.ico)" => "/$1",
+       "(css|files|img|js)/(.*)" => "/$1/$2",
+       "^([^\?]*)(\?(.+))?$" => "/index.php?url=$1&$3",
+   )
+	url.rewrite-once = (
+	    "^/(typo3|info/|typo3temp/|typo3conf/|uploads/|fileadmin/|t3lib/|robots.txt|clear.gif|favicon.ico).*$" => "$0",
+	    "^/$" => "index.php",
+	    "^typo3$" => "typo3/index_re.php",
+	    ".html?([^*]+)" => "index.php?$1",
+	    ".html$" => "index.php",
+	    "^([^*]+).([^*])+.html?([^*]+)$" => "index.php?id=$1&type=$2&$3",
+	    "^/.*?([^*]+)" => "index.php?$1",
+	    "^/.*$" => "index.php",
+	    )
+}
+

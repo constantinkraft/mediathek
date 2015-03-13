@@ -1,0 +1,15 @@
+$HTTP["host"] =~ "^(www\.)?dh.dev" {
+        server.document-root = "/srv/http/dh"
+#       url.rewrite-if-not-file =(
+#            "^([^\?]*)(\?(.+))?$" => "/index.php?url=$1&$3"
+#        )      
+#       url.rewrite =(
+#           "(index.php|test.php|favicon.ico)" => "/$1",
+#            "(css|files|img|js)/(.*)" => "/$1/$2",
+#       )
+   url.rewrite-if-not-file = (
+       "(index.php|test.php|favicon.ico)" => "/$1",
+       "(css|files|img|js)/(.*)" => "/$1/$2",
+       "^([^\?]*)(\?(.+))?$" => "/index.php?url=$1&$3",
+   )
+}
