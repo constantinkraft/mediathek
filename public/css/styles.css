@@ -4,7 +4,8 @@ li.media-object {
     float: left;
     margin: 20px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 3px #bbb;
 }
 
 li.media-object img + a.more-link {
