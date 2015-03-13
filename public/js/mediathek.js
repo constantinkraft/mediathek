@@ -127,7 +127,7 @@ $(document).ready(function() {
           idx = $(this).parent().index();
           // TODO: attach handler to button -> inline editing
           $('#hidden-infos div').eq(idx).fadeIn('slow')
-            .click(function(){ $(this).fadeOut('fast'); });
+            .find('.closebutton').click(function(){ $(this).parent().fadeOut('fast'); });
         });
       });
     };

@@ -52,12 +52,15 @@ nav li a {
 
 .footer {
     /*border-top: 2px solid #eee;*/
-    padding: 20px 1em 100px;
+    padding: 30px 1em 100px;
     color: #666;
     font-size: .7em;
     text-align: center;
     
-    background: -moz-linear-gradient(#fff, #ccc);
-    background: -webkit-linear-gradient(#fff, #ccc);
-    background: -o-linear-gradient(#fff, #ccc);
+    background: -moz-linear-gradient(#eee, #ccc);
+    background: -webkit-linear-gradient(#eee, #ccc);
+    background: -o-linear-gradient(#eee, #ccc);
+    
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
