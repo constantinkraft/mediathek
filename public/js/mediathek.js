@@ -121,19 +121,20 @@ $(document).ready(function() {
         $('div#content .container').append($item);
         $('.info-container').hide();
         // bind event handler
-        $('a.more-link').click(function( e ){
-          console.log("bam!");
-          // Get index of current item to access info-container in hidden div
-          idx = $(this).parent().index();
-          // TODO: attach handler to button -> inline editing
-          $('#hidden-infos div').eq(idx).fadeIn('slow')
-            .find('.closebutton').click(function(){ $(this).parent().fadeOut('fast'); });
-        });
+        $('a.more-link').click(showInfoPopup);
       });
     };
     
     var showInfoPopup = function() {
-        // TODO:
+      console.log("bam!");
+      // Get index of current item to access info-container in hidden div
+      idx = $(this).parent().index();
+      // TODO: attach handler to button -> inline editing
+      $('#hidden-infos div').eq(idx).fadeIn('slow')
+        .find('.closebutton')
+        .click(function(){
+          $(this).parent().fadeOut('fast');
+        });
     };
 
     init( {} );
