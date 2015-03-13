@@ -5,13 +5,18 @@
     margin: auto;
     background-color: #eee;
     border-bottom: 1px solid #ccc;
+    padding: 10px 20px 0;
+    /*border-top-right-radius: 5px;*/
+    /*border-top-left-radius: 5px;*/
 }
 
 .header h1 {
     margin: 10px;
-    font-family: Times, serif;
+    font-family: Times, DejavuSerif, serif;
     font-weight: normal;
     font-style: italic;
+    text-shadow: #000 0 0 3px;
+    color: beige;
 }
 
 ul#navigation {
@@ -63,4 +68,6 @@ nav li a {
     
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    
+    text-shadow: #999 -1px -1px 1px;
 }
