@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // module pattern as described here:
   // https://learn.jquery.com/code-organization/concepts#the-module-pattern
+  
   var gallery = (function() {
     var config = {
       data_url: "/mediathek/data/sample.xml",
@@ -9,8 +10,12 @@ $(document).ready(function() {
       files_thumbspath: "/mediathek/public/img/thumbnails/"
     }
     
+    var $mediaObjectsXML = {};
+    
     var init = function( settings ) {
       // do init stuff
+      // DEBUG
+      console.debug("init()");
       
       // Einstellungen können überschrieben werden
       $.extend( config, settings );
@@ -19,6 +24,8 @@ $(document).ready(function() {
     };
 
     var setup = function() {
+      // DEBUG
+      console.debug("setup()");
       // Container versteckt halten
       config.container.hide();
       
@@ -38,38 +45,23 @@ $(document).ready(function() {
     }
 
     var getRecordsFromServer = function(callback) {
-      console.log("bar!");
+      console.debug("getRecordsFromServer()");
       // TODO: AJAX request error handling
       $.get(config.data_url, callback);
     };
 
     var showGallery = function() {
-      console.log("foo!");
+      console.debug("showGallery()");
       // TODO: nach init() verschieben, callback sollte images nach HTML
       // übertragen
-      
-    };
-
-    var processXML = function(data) {
-      // XML in HTML übertragen
-      var $xml = $( $.parseXML(data) );
-
-      //~ $root = $xml.find("collection");
-      // Elemente holen
-      // TODO: selector feintunen: nur media-objects
-      $elements = $xml.find('media-object');
-
       // iterate XML elements
-      $.each($elements, function( idx, el ) {
+      //console.log($mediaObjectsXML);
+      $.each($mediaObjectsXML, function( idx, el ) {
         // 1) Über alle Elemente iterieren
         // 2) Views vorbereiten
         // 3) Templates rendern
         $el = $(el);
-        //console.log($el);
         var filename = $el.find("filename").text();
-        // DEBUG
-        console.log("filename: " + filename);
-
         // TODO: stattdessen über XML-Elemente
         // iterieren, da hässlich, redundandt 
         var infoTableView = {
@@ -126,7 +118,8 @@ $(document).ready(function() {
     };
     
     var showInfoModal = function() {
-      console.log("bam!");
+      // DEBUG
+      console.debug("showModalInfo()");
       // Get index of current item to access info-container in hidden div
       idx = $(this).parent().index();
       // TODO: attach handler to button -> inline editing
@@ -135,9 +128,31 @@ $(document).ready(function() {
         .click(function(){
           $(this).parent().fadeOut('fast');
         });
+      
+    };
+
+    var processXML = function(data) {
+      // DEBUG
+      console.debug("processXML()");
+      //console.debug(this.)
+      // XML in HTML übertragen
+      var $xml = $( $.parseXML(data) );
+
+      //~ $root = $xml.find("collection");
+      // Elemente holen
+      // TODO: selector feintunen: nur media-objects
+      console.log(config);
+      console.log($mediaObjectsXML);
+      $mediaObjectsXML = $xml.find('media-object');
+      console.log($mediaObjectsXML);
+      
+      // FIXME: call to this shouldn't be here!
+      showGallery();
     };
 
     var showEditModal = function() {
+      // DEBUG
+      console.debug("showEditModal()");
       // TODO: decouple from representation layer
       
     }
@@ -153,5 +168,5 @@ $(document).ready(function() {
       
   })();
 
-  gallery.showGallery();
+  //gallery.showGallery();
 });
