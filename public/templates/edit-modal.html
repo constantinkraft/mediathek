@@ -1,16 +1,19 @@
 <script type="text/html" id="edit-modal">
     <div class="edit-modal">
-        <form action="">
+        <a class="closebutton" href="#"><!--×-->&#10006;</a>
+        <div class="message-container"></div>
+        <form action="" class="edit-form">
             <fieldset>
                 <legend>{{title}} bearbeiten</legend>
-                <input type="text" value="{{title}}">
-                <textarea>{{description}}</textarea>
+                <label>Titel</label><input type="text" value="{{title}}">
+                <label>Beschreibung</label><textarea>{{description}}</textarea>
+                <label>Stichwörter</label>
                 {{#keywords}}
                     <input type="text" value="{{.}}">
                 {{/keywords}}
-                <input type="text" value="{{city}}">
-                <input type="text" value="{{country}}">
-                <input type="text" value="{{author}}">
+                <label>Stadt</label><input type="text" value="{{city}}">
+                <label>Land</label><input type="text" value="{{country}}">
+                <label>Autor</label><input type="text" value="{{author}}">
                 <button>Speichern</button>
             </fieldset>
         </form>

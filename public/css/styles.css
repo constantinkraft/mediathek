@@ -109,3 +109,41 @@ a.closebutton {
 .closebutton:active {
     outline: none;
 }
+
+a.iconbutton-edit {
+    
+}
+
+.edit-form fieldset {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    clear: both;
+}
+
+.edit-form label {
+    float: left;
+    width: 130px;
+    display: inline-block;
+    color: #ccc;
+    /*font-size: .8em;*/
+}
+
+.edit-form input
+.edit-form button {
+    height: 25px;
+}
+
+.edit-form  input,
+.edit-form textarea {
+    float: right;
+    width: 200px;
+    border: 2px solid #eee;
+    border-radius: 3px;
+    margin: 3px;
+    padding: 3px;
+}
+
+.edit-form  input:focus,
+.edit-form textarea:focus {
+    border-color: #ccc;
+}
