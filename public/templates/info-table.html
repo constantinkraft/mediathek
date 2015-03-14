@@ -1,6 +1,6 @@
 <script type="text/html" id="info-table">
-  <div class="info-container">
-    <a class="closebutton" href="#">×</a>
+  <div class="info-modal">
+    <a class="closebutton" href="#"><!--×-->&#10006;</a>
     <table class="info-table">
       <!--
         TODO: Template entschlacken
@@ -29,10 +29,10 @@
       </tr>
       <tr>
         <td>Titel</td>
-        <td>{{title}}</td>
+        <td class="editable">{{title}}</td>
       </tr>
       <tr>
-        <td>Beschreibung</td>
+        <td class="editable">Beschreibung</td>
         <td>{{description}}</td>
       </tr>
       <tr>
@@ -65,7 +65,7 @@
       </tr>
       <tr>
         <td>Stichwörter</td>
-        <td>
+        <td class="editable">
             {{#keywords}}
                 "{{.}},"
             {{/keywords}}
@@ -84,6 +84,5 @@
         <td>{{author}}</td>
       </tr>
     </table>
-    <p class="small-note">Klicken um zu schließen</p>
   </div>    
 </script>

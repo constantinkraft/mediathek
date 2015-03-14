@@ -1,0 +1,18 @@
+<script type="text/html" id="edit-modal">
+    <div class="edit-modal">
+        <form action="">
+            <fieldset>
+                <legend>{{title}} bearbeiten</legend>
+                <input type="text" value="{{title}}">
+                <textarea>{{description}}</textarea>
+                {{#keywords}}
+                    <input type="text" value="{{.}}">
+                {{/keywords}}
+                <input type="text" value="{{city}}">
+                <input type="text" value="{{country}}">
+                <input type="text" value="{{author}}">
+                <button>Speichern</button>
+            </fieldset>
+        </form>
+    </div>
+</script>

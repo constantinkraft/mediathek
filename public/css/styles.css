@@ -45,7 +45,7 @@ li.media-object img {
     margin: 0 0 5px 0;
 }
 
-div.info-container {
+div.info-modal, div.edit-modal {
     /*visibility: hidden;*/
     position: absolute;
     top: 30px; left: 50%;
