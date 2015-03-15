@@ -10,6 +10,12 @@ $(document).ready(function() {
       files_thumbspath: "/mediathek/public/img/thumbnails/"
     }
     
+    var templatePaths = [
+      'templates/info-table.html',
+      'templates/media-object.html',
+      'templates/edit-modal.html'
+    ];
+    
     var $mediaObjectsXML = {};
     
     var init = function( settings ) {
@@ -28,17 +34,15 @@ $(document).ready(function() {
       console.debug("setup()");
       // Container versteckt halten
       config.container.hide();
-      
-      // load Mustache template
-      $.Mustache.load('templates/info-table.html')
+
+      // load Mustache templates
+      $.each(templatePaths, function(idx, tpl) {
+        $.Mustache.load(tpl)
           .done(function() {
-              console.log('template loaded…');
+            console.log('template ' + tpl + ' loaded…');
           });
-      $.Mustache.load('templates/media-object.html')
-          .done(function() {
-              console.log('template loaded…');
-          });
-          
+      });
+
       // setup html container
       // getRecordsFromServer(callback)
       getRecordsFromServer(processXML);
@@ -52,10 +56,8 @@ $(document).ready(function() {
 
     var showGallery = function() {
       console.debug("showGallery()");
-      // TODO: nach init() verschieben, callback sollte images nach HTML
-      // übertragen
+      // TODO: further decouple view logic and actual presentation of images
       // iterate XML elements
-      //console.log($mediaObjectsXML);
       $.each($mediaObjectsXML, function( idx, el ) {
         // 1) Über alle Elemente iterieren
         // 2) Views vorbereiten
@@ -63,7 +65,7 @@ $(document).ready(function() {
         $el = $(el);
         var filename = $el.find("filename").text();
         // TODO: stattdessen über XML-Elemente
-        // iterieren, da hässlich, redundandt 
+        // iterieren, da hässlich, redundant 
         var infoTableView = {
             "filetype": "",
             "filedate": "",
@@ -111,24 +113,74 @@ $(document).ready(function() {
         
         // TODO: bind event handler
         $('div#content .container').append($item);
-        $('.info-container').hide();
-        // bind event handler
+        $('.info-modal').hide();
+        
+        // bind event handlers
         $('a.more-link').click(showInfoModal);
+        $('a.iconbutton-edit').click(showEditModal);
       });
     };
     
     var showInfoModal = function() {
       // DEBUG
-      console.debug("showModalInfo()");
+      console.debug("showInfoModal()");
+      // TODO: prevent modal from being shown > 1x
+      if ($('.info-modal, .edit-modal')) {
+        return false;
+      }
       // Get index of current item to access info-container in hidden div
       idx = $(this).parent().index();
       // TODO: attach handler to button -> inline editing
-      $('#hidden-infos div').eq(idx).fadeIn('slow')
+      $('#hidden-infos div.info-modal').eq(idx).fadeIn('slow')
         .find('.closebutton')
         .click(function(){
           $(this).parent().fadeOut('fast');
         });
       
+    };
+    
+    var showEditModal = function() {
+      if ($('.edit-modal').length > 0) {
+        return false;
+      }
+      // TODO: combine with showInfoModal function to one generic showModal(tpl, data )
+      // function
+      // DEBUG
+      console.debug("showEditModal()");
+      // TODO: decouple from representation layer
+      
+      // TODO: get corresponding view data
+      // FIXME: dependent on view structure
+      var idx = $('.container').find($(this)).parent().index();
+      $mediaObject = $mediaObjectsXML.eq(idx);
+      // DEBUG
+      console.debug($mediaObject);
+      var viewData = {
+        "title": "",
+        "description": "",
+        "keywords": [],
+        "country": "",
+        "city": "",
+        "author": "",
+      };
+      // TODO: DRY out
+      for (var property in viewData) {
+        if (property == "keywords") {
+          $.each($mediaObject.find('keyword'), function(idx, val) {
+            viewData[property].push($(val).text());
+          });
+        } else {
+          viewData[property] = $mediaObject.find(property).text();
+        }
+      }
+      
+      $('body').mustache('edit-modal', viewData)
+        .fadeIn('fast')
+        .find('.closebutton')
+        .click(function(){
+          $(this).parent().fadeOut('fast')
+          .remove();
+        });        
     };
 
     var processXML = function(data) {
@@ -146,16 +198,13 @@ $(document).ready(function() {
       $mediaObjectsXML = $xml.find('media-object');
       console.log($mediaObjectsXML);
       
-      // FIXME: call to this shouldn't be here!
+      // FIXME: shouldn't be called here -> single responsibility!
       showGallery();
     };
-
-    var showEditModal = function() {
-      // DEBUG
-      console.debug("showEditModal()");
-      // TODO: decouple from representation layer
+    
+    var processFormData = function() {
       
-    }
+    };
     
     init( {} );
     setup();

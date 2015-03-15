@@ -46,7 +46,6 @@ li.media-object img {
 }
 
 div.info-modal, div.edit-modal {
-    /*visibility: hidden;*/
     position: absolute;
     top: 30px; left: 50%;
     width: 400px;
@@ -138,7 +137,7 @@ a.iconbutton-edit {
     float: right;
     width: 200px;
     border: 2px solid #eee;
-    border-radius: 3px;
+    border-radius: 5px;
     margin: 3px;
     padding: 3px;
 }
@@ -146,4 +145,20 @@ a.iconbutton-edit {
 .edit-form  input:focus,
 .edit-form textarea:focus {
     border-color: #ccc;
+}
+
+.edit-form button {
+    margin: auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 3px;    
+}
+
+hr {
+    margin: 10px 0;
+    height: 10px;
+    border: none;
+    border-bottom: 1px dashed #eee;
+    clear: both;
 }
