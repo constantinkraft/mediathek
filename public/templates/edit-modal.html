@@ -2,20 +2,22 @@
     <div class="edit-modal">
         <a class="closebutton" href="#"><!--×-->&#10006;</a>
         <div class="message-container"></div>
-        <form action="" class="edit-form">
+        <form action="/" class="edit-form" id="edit-form">
             <fieldset>
                 <legend>{{title}} bearbeiten</legend>
-                <label>Titel</label><input type="text" value="{{title}}">
-                <label>Beschreibung</label><textarea>{{description}}</textarea>
+                <label>Titel</label><input type="text" name="title" value="{{title}}">
+                <label>Beschreibung</label><textarea name="description">{{description}}</textarea>
                 <label>Stichwörter</label>
                 {{#keywords}}
-                    <input type="text" value="{{.}}">
+                    <input type="text" name="keyword[]" value="{{.}}">
                 {{/keywords}}
-                <label>Stadt</label><input type="text" value="{{city}}">
-                <label>Land</label><input type="text" value="{{country}}">
-                <label>Autor</label><input type="text" value="{{author}}">
+                <label>Stadt</label><input type="text" name="city" value="{{city}}">
+                <label>Land</label><input type="text" name="country" value="{{country}}">
+                <label>Autor</label><input type="text" name="author" value="{{author}}">
                 <hr>
-                <button>Speichern</button>
+                <input type="hidden" name="action" value="edit">
+                <input type="hidden" name="filename" value="{{filename}}">
+                <input type="submit" id="btn_update" value="Speichern">
             </fieldset>
         </form>
     </div>
