@@ -110,8 +110,12 @@ a.closebutton {
 }
 
 a.iconbutton-edit {
-    
+    display: block;
+    width: 24px; height: 24px;
+    background: url(img/pen-checkbox-24.png);
 }
+
+
 
 .edit-form fieldset {
     border-radius: 5px;

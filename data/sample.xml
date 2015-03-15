@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="sample.xsd">
+<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="sample.xsd">
     <title>Test</title>
     <description>
         Lorem Ipsum dolo sit amet. Test Gedöns Beschreibung...
@@ -11,8 +10,8 @@
         <filename>IMAG0006.JPG</filename>
         <filesize>449712</filesize>
         <filedate>2010:03:28 10:51:27</filedate>
-        <title>Test-Titel</title>
-        <description>Ein Rotkehlchen im Garten meiner Eltern.</description>
+        <title>Rotkehlchen</title>
+        <description>Ein Rotkehlchen im Garten meiner Eltern, geschossen vor über 5 Jahren…</description>
         <datetime>2005:08:04 14:54:37</datetime>
         <camera-make>LUMICRON</camera-make>
         <camera-model>LDC-4013</camera-model>
@@ -27,7 +26,7 @@
         </keywords>
         <city>Köln</city>
         <country>Deutschland</country>
-        <author>Constantin Kraft</author>
+        <author>Felix Constantin Kraft</author>
     </media-object>
 
     <media-object>

@@ -70,4 +70,6 @@ nav li a {
     border-bottom-left-radius: 5px;
     
     text-shadow: #999 -1px -1px 1px;
+    
+    /*box-shadow: #999 */
 }

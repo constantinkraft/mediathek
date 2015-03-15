@@ -5,15 +5,15 @@
         <form action="/" class="edit-form" id="edit-form">
             <fieldset>
                 <legend>{{title}} bearbeiten</legend>
-                <label>Titel</label><input type="text" name="title" value="{{title}}">
-                <label>Beschreibung</label><textarea name="description">{{description}}</textarea>
+                <label>Titel</label><input type="text" name="data[title]" value="{{title}}">
+                <label>Beschreibung</label><textarea name="data[description]">{{description}}</textarea>
                 <label>Stichwörter</label>
                 {{#keywords}}
-                    <input type="text" name="keyword[]" value="{{.}}">
+                    <input type="text" name="data[keyword][]" value="{{.}}">
                 {{/keywords}}
-                <label>Stadt</label><input type="text" name="city" value="{{city}}">
-                <label>Land</label><input type="text" name="country" value="{{country}}">
-                <label>Autor</label><input type="text" name="author" value="{{author}}">
+                <label>Stadt</label><input type="text" name="data[city]" value="{{city}}">
+                <label>Land</label><input type="text" name="data[country]" value="{{country}}">
+                <label>Autor</label><input type="text" name="data[author]" value="{{author}}">
                 <hr>
                 <input type="hidden" name="action" value="edit">
                 <input type="hidden" name="filename" value="{{filename}}">
