@@ -5,7 +5,7 @@ $(document).ready(function() {
   var gallery = (function() {
     var config = {
       data_url: "/mediathek/data/sample.xml",
-      container: $( '<div class="container"></div>' ),
+      edit_url: "/mediathek/backend/edit.php",
       files_basepath: "/mediathek/public/img/",
       files_thumbspath: "/mediathek/public/img/thumbnails/"
     }
@@ -32,8 +32,6 @@ $(document).ready(function() {
     var setup = function() {
       // DEBUG
       console.debug("setup()");
-      // Container versteckt halten
-      config.container.hide();
 
       // load Mustache templates
       $.each(templatePaths, function(idx, tpl) {
@@ -125,9 +123,9 @@ $(document).ready(function() {
       // DEBUG
       console.debug("showInfoModal()");
       // TODO: prevent modal from being shown > 1x
-      if ($('.info-modal, .edit-modal')) {
-        return false;
-      }
+      //if ($('.info-modal:visible, .edit-modal:visible').length > 0) {
+      //  return false;
+      //}
       // Get index of current item to access info-container in hidden div
       idx = $(this).parent().index();
       // TODO: attach handler to button -> inline editing
@@ -156,6 +154,7 @@ $(document).ready(function() {
       // DEBUG
       console.debug($mediaObject);
       var viewData = {
+        "filename": "",
         "title": "",
         "description": "",
         "keywords": [],
@@ -180,7 +179,8 @@ $(document).ready(function() {
         .click(function(){
           $(this).parent().fadeOut('fast')
           .remove();
-        });        
+        });
+      $('#edit-form').submit(processForm);
     };
 
     var processXML = function(data) {
@@ -202,8 +202,21 @@ $(document).ready(function() {
       showGallery();
     };
     
-    var processFormData = function() {
-      
+    var processForm= function( event ) {
+      // prevent form from being submitted normally
+      event.preventDefault();
+      // DEBUG
+      console.debug("form submitted");
+      // AJAX request
+      $.post(config.edit_url, $( "#edit-form" ).serialize())
+        .done(function( data ) {
+          console.debug(data);
+          // TODO: show success message
+        })
+        .fail(function() {
+          // TODO: show error msg
+          console.error("request failed!");
+        });
     };
     
     init( {} );
